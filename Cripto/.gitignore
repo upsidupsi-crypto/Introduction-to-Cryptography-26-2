@@ -1,0 +1,55 @@
+# 1. Entornos e IDEs
+.idea/
+*.iml
+.vscode/
+
+# 2. Archivos Criptográficos Sensibles y Secretos
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.cer
+*.crt
+.env
+.env.local
+.env.*
+secrets.json
+
+# 3. Lenguajes de Programación y Compilados
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.pytest_cache/
+
+# Java
+*.class
+target/
+build/
+.gradle/
+
+# C / C++
+*.o
+*.out
+*.exe
+*.dll
+*.so
+
+# Node.js / JavaScript
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# VHDL / Simuladores
+work/
+transcript
+*.wlf
+*.asdb
+
+# 4. Sistema Operativo
+.DS_Store
+Thumbs.db
