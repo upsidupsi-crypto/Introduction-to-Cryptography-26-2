@@ -8,7 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class interfaz extends JFrame {
-    private JTextField corrimiento;
+    private JTextField txtcorrimiento;
 
     public interfaz() {
         setTitle("Cifrador por corrimiento");
@@ -20,10 +20,10 @@ public class interfaz extends JFrame {
         e_corrimiento.setBorder(new EmptyBorder(10,10,10,10));
         JLabel lblCorrimiento = new JLabel("Corrimiento");
         lblCorrimiento.setFont(new Font("Montserrat", Font.BOLD, 20));
-        corrimiento=new JTextField(8);
-        corrimiento.setFont(new Font("Montserrat",Font.PLAIN,16));
+        txtcorrimiento=new JTextField(8);
+        txtcorrimiento.setFont(new Font("Montserrat",Font.PLAIN,16));
         e_corrimiento.add(lblCorrimiento);
-        e_corrimiento.add(corrimiento);
+        e_corrimiento.add(txtcorrimiento);
         add(e_corrimiento,BorderLayout.CENTER);
         JPanel botones = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JButton b_Cifrar = new JButton("Cifrar");
@@ -35,17 +35,18 @@ public class interfaz extends JFrame {
         b_Descifrar.addActionListener(e -> e_accion(false));
     }
     private void e_accion(boolean x) {
-        String text = corrimiento.getText().trim();
+        String text = txtcorrimiento.getText().trim();
         if(text.isEmpty()){
             JOptionPane.showMessageDialog(this,"Ingrese un corrimiento");
             return;
         }
-        int corrim;
+        int corrimiento;
         try{
-            corrim = Integer.parseInt(text);
+            corrimiento = Integer.parseInt(text);
         }
         catch(NumberFormatException e){
             JOptionPane.showMessageDialog(this,"Ingrese un corrimiento válido");
+            return;
         }
         JFileChooser selectorArchivo = new JFileChooser();
         selectorArchivo.setDialogTitle(x ? "Selecciona el archivo para Cifrar" : "Selecciona el archivo para Descifrar");
@@ -56,7 +57,7 @@ public class interfaz extends JFrame {
             File archivoSeleccionado = selectorArchivo.getSelectedFile();
 
             try {
-                Cifrador.procesarArchivo(archivoSeleccionado.getAbsolutePath(), x, corrimiento);
+                Cifrador.archivo(archivoSeleccionado.getAbsolutePath(), x, corrimiento);
                 JOptionPane.showMessageDialog(this,
                         "Archivo procesado con exito\nRevisa la misma carpeta del archivo original.",
                         "Proceso Terminado",
