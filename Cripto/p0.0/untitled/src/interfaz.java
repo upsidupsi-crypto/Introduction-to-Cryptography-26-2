@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -366,4 +366,4 @@ public class interfaz extends JFrame {
         });
     }
 }
->>>>>>> 3a48db3 (Subiendo código completo de Práctica 2)
+
