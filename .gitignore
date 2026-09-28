@@ -1,0 +1,15 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# NetBeans / Ant
+nbproject/
+build.xml
+genfiles.properties
+private/
+
+# Salida de compilación
+out/
+build/
+target/
+*.class
